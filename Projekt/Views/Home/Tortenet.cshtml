@@ -1,0 +1,101 @@
+﻿@{ ViewData["Title"] = "Történet";}
+<!-- Header section Start-->
+<header class="top">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <partial name="~/Views/Shared/_LoginPartial.cshtml" />
+        <a asp-action="index">Főoldal</a>
+        <a class="active" asp-action="Tortenet">Történet</a>
+        <a asp-action="Feldolgozas">Feldolgozás</a>
+        <a asp-action="Leiras">Leírás</a>
+        <a asp-action="Ismerteto">Ismertető</a>
+        <partial name="~/Views/Home/UserCheck.cshtml" />
+
+    </div>
+
+    <nav id="navbar">
+        <!-- container Start-->
+        <div class="container">
+            <!--Row Start-->
+            <div class="row">
+                <div class="col-lg-5 col-md-5 align-self-center left-side">
+                    <partial name="~/Views/Shared/_WelcomePartial.cshtml" />
+                </div>
+                <div class="col-lg-2 col-md-2 col-5 align-self-center logo">
+                    <a asp-action="index"><img src="~/template/images/nav-logo.png" alt="logo"></a>
+                </div>
+                <div class="col-lg-5 col-md-5 col-7 align-self-center right-side">
+                    <div class="social-icons square">
+                        <!-- Page Content -->
+                        <div id="page-content-wrapper">
+                            <span class="slide-menu" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                    <div class="social-icons another">
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Row Ended-->
+        </div>
+        <!-- container Ended-->
+    </nav>
+    <img class="border-img" src="~/template/images/border.png" width="100%" alt="">
+</header>
+<!-- Header section Ended-->
+
+<section class="banner-another"></section>
+<!-- About Section Start -->
+<div id="about-us">
+    <div class="container">
+        <h3 data-aos="fade-up" data-aos-delay="300">A gyógynövények története</h3>
+        <div class="row" data-aos="fade-up" data-aos-delay="500">
+            <div>
+                <img src="~/template/images/about.jpg" alt="about-bg" class="thumbnail image">
+                <p>Ősi kultúrákban elsősorban ezekkel a növényekkel gyógyítottak, több ezer gyógynövényt ismertek, melyet a modern tudomány kutatásaival igazolt. Vannak vadontermő és termesztett gyógynövények. A rómaiak termesztettek először gyógyászati célra növényeket, de az egyiptomi Ebers-papirusz, ami i. e. 3500 körül keletkezett, több mint 800 különböző gyógymódot ír le. Az ókori kínaiak már i.e. is végeztek komoly műtéteket különböző gyógynövényfőzeteket alkalmazva. Hua Tuo általános érzéstelenítés alatt hajtott végre műtéteket, a betegeknek a saját maga által kifejlesztett, borral kevert gyógynövénykivonatot adta.</p>
+                <p>Hua Tuo állítólag még olyan komoly műtéti beavatkozásokat is végrehajtott a mafeisan segítségével, mint az emésztőrendszer egy részének eltávolítása. A műtét előtt szájon át adta be a borban elkevert kivonatot, amely eszméletlenséget eredményezett, illetve feltehetően blokkolta az ideg-izom ingerületáttevődés.</p>
+                <p>Magyarországon az 1915-ben alapított Gyógynövénykísérleti Állomás kezdte meg, majd a Gyógynövénykutató Intézet és a Herbária Központ szervezi a vadontermő gyógynövények gyűjtését és termesztését. </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Section End -->
+
+<footer class="contact">
+    <div class="gradient"></div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row border-img">
+                <div class="col-md-12">
+                    <img src="~/template/images/border.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <a asp-action="index"><img src="~/template/images/footer-logo-bg.png" alt="logo"></a>
+                </div>
+                <div class="col-lg-9 col-md-12 right-part">
+                    <ul class="ml-auto">
+                        <partial name="~/Views/Home/ProfilCheck.cshtml" />
+                        <li class="nav-item active">
+                            <a class="nav-link active" asp-action="index">Főoldal <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li><a class="hidden-xs">~</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Feldolgozas">Feldolgozás</a></li>
+                        <li><a class="hidden-xs">~</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Leiras">Leírás</a></li>
+                        <li><a class="hidden-xs">~</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Ismerteto">Ismertető</a></li>
+                        <partial name="~/Views/Home/UserCheckBar.cshtml" />
+                    </ul>
+                    <p> (C) Rajcsány Zsolt - 2021 - Powered by: <a href="https://www.template.net/editable/websites/html5" target="_blank"> Template.net</a></p>                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Return to Top -->

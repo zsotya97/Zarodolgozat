@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Projekt.Areas.Identity.Data
+@inject SignInManager<ProjektUser> SignInManager
+@inject UserManager<ProjektUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <li><a class="hidden-xs">~</a></li>
+    <li class="nav-item"><a asp-action="Feltoltes" class="nav-link">Feltöltés</a></li>
+ }
+

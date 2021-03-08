@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Projekt.Areas.Identity.Data
+@inject SignInManager<ProjektUser> SignInManager
+@inject UserManager<ProjektUser> UserManager
+
+@{
+    var profil = await UserManager.GetUserAsync(User);
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    
+
+
+
+    <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Account/Login", new { area = "Identity" })">
+            <button id="logout" type="submit" class=" btn btn-link text-white" style="margin-left:18px;"><b>Kilépés</b></button>
+        </form>
+}
+else
+{
+
+
+    <a asp-area="Identity" asp-page="/Account/Login" title="Profil" class="text-white btn-link"><b>Bejelentkezés</b></a>
+
+}

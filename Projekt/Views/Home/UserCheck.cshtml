@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Projekt.Areas.Identity.Data
+@inject SignInManager<ProjektUser> SignInManager
+@inject UserManager<ProjektUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+<a asp-action="Feltoltes">Feltöltés</a>
+}
+

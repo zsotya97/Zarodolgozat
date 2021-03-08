@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Projekt.Areas.Identity.Data
+@inject SignInManager<ProjektUser> SignInManager
+@inject UserManager<ProjektUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+
+    <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" class="text-white" title="Profil megjelenítése"><br />Profil</a></li>
+    <li><a class="hidden-xs">~</a></li>
+}

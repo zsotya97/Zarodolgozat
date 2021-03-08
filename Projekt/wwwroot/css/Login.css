@@ -1,0 +1,60 @@
+﻿
+body {
+    background-image: url("/images/tea.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+a:visited, a, a:active {
+    color: white;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+
+.login-form {
+    margin: 100px auto;
+    max-width: 400px;
+}
+
+form[role=login] {
+    font: 16px/1.8em Lato, serif;
+    background: rgb(0, 0, 0,0.5);
+    padding: 30px 26px;
+    color: #fff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+    form[role=login] > img {
+        display: block;
+        margin-bottom: 2em;
+    }
+
+    form[role=login] .form-control,
+    form[role=login] button {
+        font-size: 18px;
+        margin: 16px 0;
+    }
+
+.form-links {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 50px;
+}

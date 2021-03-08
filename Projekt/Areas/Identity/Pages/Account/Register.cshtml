@@ -1,0 +1,54 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Regisztráció";
+    Layout = "~/Areas/Identity/Pages/_Regadatok.cshtml";
+}
+
+
+    
+            
+<form asp-route-returnUrl="@Model.ReturnUrl" method="post" role="login" id="account">
+
+    <h2 style="text-align:center">Regisztráció</h2>
+
+    <hr />
+    <div class="form-group">
+
+        <input asp-for="Input.Vezetéknév" required class="form-control input-sm" placeholder="Vezetéknév" />
+    </div>
+
+    <div class="form-group">
+
+        <input asp-for="Input.Keresztnév" required class="form-control input-sm" placeholder="Keresztnév" />
+    </div>
+
+
+    <div class="form-group">
+
+        <input asp-for="Input.Password" required class="form-control input-sm" placeholder="Jelszó" />
+    </div>
+    <div class="form-group">
+
+        <input asp-for="Input.ConfirmPassword" required class="form-control input-sm" placeholder="jelszó megerősítése" />
+    </div>
+    <div class="form-group">
+
+        <input asp-for="Input.Email" required class="form-control input-sm" placeholder="E-mal cím" />
+    </div>
+    <div class="form-group">
+
+        <input asp-for="Input.PhoneNumber"  class="form-control input-sm" placeholder="Telefonszám (Opcionális)" />
+    </div>
+
+    <button type="submit" class="btn btn-block btn-primary btn-sm">Regisztráció</button>
+    <p class=" text-center">Bejelentkezéshez kattints <a asp-page="./Login">ide</a>!</p>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+</form>
+
+     
+   
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

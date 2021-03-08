@@ -1,0 +1,299 @@
+﻿@{ ViewData["Title"] = "Főoldal";}
+<!-- Header section Start -->
+@model List<Osszesitett>
+<header class="top">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <partial name="~/Views/Shared/_LoginPartial.cshtml" />
+        <a class="active" asp-action="index">Főoldal</a>
+        <a asp-action="Tortenet">Történet</a>
+        <a asp-action="Feldolgozas">Feldolgozás</a>
+        <a asp-action="Leiras">Leírás</a>
+        <a asp-action="Ismerteto">ismertető</a>
+        <partial name="~/Views/Home/UserCheck.cshtml" />
+    </div>
+    <!-- Nav section Start -->
+    <nav id="navbar">
+        <!-- container Start-->
+        <div class="container">
+            <!--Row Start-->
+            <div class="row">
+                <div class="col-lg-5 col-md-5 align-self-center left-side">
+                    <partial name="~/Views/Shared/_WelcomePartial.cshtml" />
+                </div>
+                <div class="col-lg-2 col-md-2 col-5 align-self-center logo">
+                    <a asp-action="index"><img src="~/template/images/nav-logo.png" alt="logo"></a>
+                </div>
+                <div class="col-lg-5 col-md-5 col-7 align-self-center right-side">
+                    <div class="social-icons square">
+                        <!-- Page Content -->
+                        <div id="page-content-wrapper">
+                            <span class="slide-menu" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                    <div class="social-icons another">
+                        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <!--Row Ended-->
+        </div>
+        <!-- container Ended-->
+    </nav>
+    <!-- Nav section Ended -->
+    <img class="border-img" src="~/template/images/border.png" width="100%" alt="">
+</header>
+<!-- Header section Ended-->
+<!-- Banner section Start -->
+<section class="banner-home">
+    <!-- Gradient -->
+    <div class="gradient"></div>
+    <!-- container Start-->
+    <div class="container">
+        <!--Row Start-->
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 data-aos="fade-left">A gyógynövények!</h1>
+                <h2 data-aos="fade-left" data-aos-delay="100">Ezen az oldalon mindent megtudsz a gyógynövényekről: </h2>
+                <p data-aos="fade-left" data-aos-delay="200"><i class="fa fa-smile-o" aria-hidden="true"></i><span>Hogy milyen betegségekre jó </span></p>
+                <p data-aos="fade-left" data-aos-delay="300"><i class="fa fa-smile-o" aria-hidden="true"></i><span>Hogyan kell gyűjteni </span></p>
+                <p data-aos="fade-left" data-aos-delay="400"><i class="fa fa-smile-o" aria-hidden="true"></i><span>Hogyan kell tárolni </span></p>
+                <p data-aos="fade-left" data-aos-delay="500"><i class="fa fa-smile-o" aria-hidden="true"></i><span>Hogyan kell szárítani</span></p>
+
+                <a data-aos="fade-left" data-aos-delay="500" class="btn btn-success" asp-action="Tortenet" role="button">Történetük!</a>
+            </div>
+        </div>
+        <!--Row Ended-->
+    </div>
+    <!-- container Ended-->
+</section>
+<!-- Banner section Ended -->
+<!-- About section start-->
+<section class="about">
+    <!-- container Start-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12 heading">
+                <img src="~/template/images/leaf.png" alt="">
+                <h2>Gyűjtés, Szárítás és tárolás</h2>
+                <h3>Bővebb információért kattints bármelyik körre!</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-12 box-1" data-aos="fade-right" data-aos-duration="400">
+                <div class="circle">
+                    <div class="gradient"></div>
+                    <div class="circle__inner">
+                        <div class="circle__wrapper">
+                            <div class="circle__content">
+                                <h4><a asp-action="Feldolgozas">Gyűjtés</a></h4>
+                                <p><a asp-action="Feldolgozas">Gyűjtésük szakértelmet kíván. Megfelelő időben, helyen javasolt.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-12 box-2" data-aos="fade-up" data-aos-duration="400">
+                <div class="circle">
+                    <div class="gradient"></div>
+                    <div class="circle__inner">
+                        <div class="circle__wrapper">
+                            <div class="circle__content">
+                                <h4><a asp-action="Feldolgozas">Szárítás</a></h4>
+                                <p><a asp-action="Feldolgozas">Szárítás előtt ne mossuk meg. 35 fok fölé ne menjen a hőmérséklet.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-12 box-3" data-aos="fade-left" data-aos-duration="400">
+                <div class="circle">
+                    <div class="gradient"></div>
+                    <div class="circle__inner">
+                        <div class="circle__wrapper">
+                            <div class="circle__content">
+                                <h4><a asp-action="Feldolgozas">Tárolás</a></h4>
+                                <p><a asp-action="Feldolgozas">Csak teljesen száraz növényeket szabad tárolni.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container Ended-->
+</section>
+<!-- About section Ended-->
+<!-- Services section start-->
+<section class="services">
+    <!-- container-fluid Start-->
+    <div class="container-fluid">
+        <div class="row" data-aos="fade-up" data-aos-duration="400">
+            <div class="col-md-3">
+                <figure>
+                    <img src="~/template/images/hatoanyag.jpg" alt="The Pulpit Rock">
+                </figure>
+                <div class="gradient"></div>
+            </div>
+            <div class="col-md-9 right-part">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>A Gyógynövények csodákra képesek!</h2>
+                        <h3>Minden betegséget képesek gyógyítani!</h3>
+                        <p>A gyógynövények hatóanyagai</p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 contant-part-1">
+                                <ul>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Alkaloidok</span></li>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Cserzőanyagok</span></li>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Glikozidok</span> </li>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Illóolajok</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12 contant-part-2">
+                                <ul>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Keserű anyagok</span></li>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Szaponinok</span></li>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Szénhidrátok</span> </li>
+                                    <li><i class="fa fa-envira" aria-hidden="true"></i><span>Vitaminok</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- container-fluid Ended-->
+</section>
+<!-- Services section Ended-->
+<!-- Section-4 section start-->
+<!-- Section-4 section Ended-->
+<!-- Blog section start-->
+<section class="blog">
+    <!-- container Start-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12 heading">
+                <img src="~/template/images/leaf.png" alt="">
+                <h2>Pár gyógynövény látható ezen az oldalon</h2>
+                <h3>Kattintson a linkekre további információért!</h3>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-duration="400">
+            <div class="col-md-12 col-12">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure>
+                                    <a asp-action="Leiras"><img src="~/images/Novenyek/@Model[0].Kep" class="zoom" alt="The Pulpit Rock" width="304" height="228"></a>
+                                </figure>
+                            </div>
+                            <div class="col-md-8 inner-content">
+                                <h4><a asp-action="Leiras">@($"{Model[0].Magyar} ({Model[0].Latin})")</a></h4>
+                                <p><span> <b>Előfordulása: @Model[0].Honap</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure>
+                                    <a asp-action="Leiras"><img src="~/images/Novenyek/@Model[1].Kep" class="zoom" alt="The Pulpit Rock" width="304" height="228"></a>
+                                </figure>
+                            </div>
+                            <div class="col-md-8 inner-content">
+                                <h4><a asp-action="Leiras">@($"{Model[1].Magyar} ({Model[1].Latin})")</a></h4>
+                                <p><span> <b>Előfordulása: @Model[1].Honap</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-12">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure>
+                                    <a asp-action="Leiras"><img src="~/images/Novenyek/@Model[2].Kep" class="zoom" alt="The Pulpit Rock" width="304" height="228"></a>
+                                </figure>
+                            </div>
+                            <div class="col-md-8 inner-content">
+                                <h4><a asp-action="Leiras">@($"{Model[2].Magyar} ({Model[2].Latin})")</a></h4>
+                                <p><span> <b>Előfordulása: @Model[2].Honap</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure>
+                                    <a asp-action="Leiras"><img src="~/images/Novenyek/@Model[3].Kep" class="zoom" alt="The Pulpit Rock" width="304" height="228"></a>
+                                </figure>
+                            </div>
+                            <div class="col-md-8 inner-content">
+                                <h4><a asp-action="Leiras">@($"{Model[3].Magyar} ({Model[3].Latin})")</a></h4>
+                                <p><span> <b>Előfordulása: @Model[3].Honap</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-6 button">
+                <a class="btn btn-success" asp-action="Ismerteto" role="button">Rövid ismertető</a>
+            </div>
+            <div class="col-md-6 col-6 button">
+                <a class="btn btn-success" asp-action="Leiras" role="button">Bővebb információ</a>
+            </div>
+        </div>
+    </div>
+    <!-- container Ended-->
+</section>
+<!-- Blog section Ended-->
+<!-- Footer section start-->
+<footer class="contact">
+    <div class="gradient"></div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row border-img">
+                <div class="col-md-12">
+                    <img src="~/template/images/border.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <a asp-action="index"><img src="~/template/images/footer-logo-bg.png" alt="logo"></a>
+                </div>
+                <div class="col-lg-9 col-md-12 right-part">
+                    <ul class="ml-auto">
+                        <partial name="~/Views/Home/ProfilCheck.cshtml" />
+                        <li class="nav-item active">
+                            <a class="nav-link active" asp-action="index">Főoldal <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li><a class="hidden-xs">~</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Feldolgozas">Feldolgozás</a></li>
+                        <li><a class="hidden-xs">~</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Leiras">Leírás</a></li>
+                        <li><a class="hidden-xs">~</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Ismerteto">Ismertető</a></li>
+                        <partial name="~/Views/Home/UserCheckBar.cshtml" />
+                    </ul>
+                    <p> (C) Rajcsány Zsolt - 2021 - Powered by: <a href="https://www.template.net/editable/websites/html5" target="_blank"> Template.net</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

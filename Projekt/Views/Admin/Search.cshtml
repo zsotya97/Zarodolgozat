@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Osszesitett>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<form  asp-action="Magyar" method="post">
+    <p>
+        Magyar: <input type="text" name="Magyar" />
+        <input type="submit" value="Keresés" />
+    </p>
+    
+</form>
+<form asp-action="Latin" method="post">
+    <p>
+        Latin: <input type="text" name="Latin" />
+        <input type="submit" value="Keresés" />
+
+    </p>
+</form>
+<form asp-action="Torles" method="post">
+    
+        <input type="submit" value="Fölösleges fájlok törlése" />
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Latin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Magyar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Honap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kep)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Magyar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Honap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kep)
+            </td>
+            <td>
+                <form asp-action="DeleteNoveny" method="post">
+                    <input type="hidden" asp-for="@item.ID" name="id" />
+                    <input type="submit" value="Törlés" class="btn btn-danger" /> 
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

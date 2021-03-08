@@ -1,0 +1,37 @@
+﻿@model Projekt.Areas.Identity.Data.ProjektUser
+
+@{
+    Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Profil Adatai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vezetéknév)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vezetéknév)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Keresztnév)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Keresztnév)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+

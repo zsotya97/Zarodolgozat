@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/images/tea.jpg");
+            background-repeat: no-repeat;
+            background-attachment:fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        a:visited, a, a:active {
+            color: white;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+
+
+        .login-form {
+            margin: 100px auto;
+            max-width: 350px;
+            
+        }
+
+        form[role=login] {
+            font: 16px/1.8em Lato, serif;
+            background:rgb(0, 0, 0,0.6);
+            padding: 30px 26px;
+            color: #fff;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+            form[role=login] > img {
+                display: block;
+                margin-bottom: 2em;
+            }
+
+            form[role=login] .form-control,
+            form[role=login] button {
+                font-size: 18px;
+                margin: 16px 0;
+            }
+
+        .form-links {
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 50px;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=1,initial-scale=1,user-scalable=1" />
+    <title>@ViewData["Title"]</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/assets/bootstrap/css/bootstrap.min.css" />
+
+
+
+
+</head>
+<body>
+    <section class="container">
+        <section class="login-form">
+            @RenderBody();
+          
+        </section>
+    </section>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+@await RenderSectionAsync("Scripts", required: false)
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
