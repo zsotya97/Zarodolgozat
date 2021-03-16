@@ -1,6 +1,13 @@
-﻿@model List<Osszesitett>
-@{ ViewData["Title"] = "Ismertető";}
+﻿@model Osszesitett
+@{ ViewData["Title"] = Model.Magyar; }
 <!-- Header section Start-->
+<style>
+    #vissza{
+        font-size:30px !important;
+        text-align:center !important;
+        margin:30px !important;
+    }
+</style>
 <header class="top">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -8,8 +15,8 @@
         <a asp-action="index">Főoldal</a>
         <a asp-action="Tortenet">Történet</a>
         <a asp-action="Feldolgozas">Feldolgozás</a>
-        <a asp-action="Leiras">Leírás</a>
-        <a class="active" asp-action="Ismerteto">Ismertető</a>
+        <a class="active" asp-action="Leiras">Leiras</a>
+        <a asp-action="Ismerteto">Ismertető</a>
         <partial name="~/Views/Home/UserCheck.cshtml" />
     </div>
 
@@ -51,57 +58,43 @@
     <!-- Banner section Start-->
 </section>
 <!-- services section Start -->
-<section id="rates">
+<section id="products">
     <div class="container">
-        @if (Model != null)
-        {
-        <h2 data-aos="fade-up" data-aos-delay="200">Növényeink</h2>
-                <div class="part-1" data-aos="fade-up" data-aos-delay="400">
-                    <div class="row">
-                        <div class="col-md-12 col-12 heading">
-                            <h3><i class="fa fa-envira" aria-hidden="true"></i>@($"{Model.First().Magyar} ({Model.First().Latin})")</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-12">
-                            <figure>
-                                <img src="~/images/Novenyek/@Model.First().Kep" alt="@Model.First().Magyar" title="@Model.First().Magyar" width="100%">
-                            </figure>
-                        </div>
-                        <div class="col-lg-9 col-md-8 col-12 col1">
-                            <p>Előfordulásának kezdeti hónapja: @(Model.First().Honap)</p>
-                            <h6>Betegség típusa: @Model.First().Tipus <span>Felhasznált része: @Model.First().Resz</span></h6>
-                        </div>
-                    </div>
+
+        <div class="part-1" data-aos="fade-up" data-aos-delay="400">
+            <div class="row">
+                <div class="col-md-12 col-12 heading">
+                    <h3><i class="fa fa-envira" aria-hidden="true"></i>@($"{Model.Magyar} ({Model.Latin})")</h3>
                 </div>
-                                @foreach (var item in Model.Skip(1))
-                                {
-                <div class="part-2" data-aos="fade-up" data-aos-delay="400">
-                    <div class="row">
-                        <div class="col-md-12 heading">
-                            <h3><i class="fa fa-envira" aria-hidden="true"></i>@($"{item.Magyar} ({item.Latin})")</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-12">
-                            <figure>
-                                <img src="~/images/Novenyek/@item.Kep" alt="@item.Magyar" title="@item.Magyar" width="100%">
-                            </figure>
-                        </div>
-                        <div class="col-lg-9 col-md-8 col-12 col1">
-                            <p>Előfordulásának kezdeti hónapja: @item.Honap</p>
-                            <h6>Betegség típusa: @item.Tipus <span>Felhasznált része: @item.Resz</span></h6>
-                        </div>
-                    </div>
-                </div>} }
-        else
-        {
-            <h3>Nincs az adatbázisban megfelelő növény</h3>
-        }
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-12">
+                    <figure>
+                        <img src="~/images/Novenyek/@Model.Kep" alt="@Model.Magyar" title="@Model.Magyar" width="100%">
+                    </figure>
+                </div>
+                <div class="col-lg-9 col-md-8 col-12 col1">
+                    <p><strong>Előfordulásának kezdeti hónapja:</strong> @(Model.Honap)</p>
+                    <p><strong>Betegség típusa:</strong> @Model.Tipus </p>
+                    <p><strong>Felhasznált része:</strong> @Model.Resz</p>
+                </div>
+            </div>
+        </div>
+        <div class="part-1" data-aos="fade-up" data-aos-delay="400">
+            <div class="row">
+
+                <div class="col-lg-9 col-md-8 col-12 col1">
+                    <p>
+                        @Model.Leiras
+                    </p>
+                </div>
+            </div>
+            <p id="vissza"><a asp-action="Leiras">Vissza</a></p>
+        </div>
+       
     </div>
-    
 </section>
-<!-- Feldolgozas section Ended -->
+<!-- services section Ended -->
 
 <footer class="contact">
     <div class="gradient"></div>
@@ -113,6 +106,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-12">
@@ -132,13 +126,13 @@
                         <li class="nav-item"><a class="nav-link" asp-action="Ismerteto">Ismertető</a></li>
                         <partial name="~/Views/Home/UserCheckBar.cshtml" />
                     </ul>
-                    <p> (C) Rajcsány Zsolt - 2021 - Powered by: <a href="https://www.template.net/editable/websites/html5" target="_blank"> Template.net</a></p>                </div>
+                    <p> (C) Rajcsány Zsolt - 2021 - Powered by: <a href="https://www.template.net/editable/websites/html5" target="_blank"> Template.net</a></p>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 <!-- Return to Top -->
-
 
 <script></script>
 
