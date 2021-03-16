@@ -36,9 +36,6 @@ namespace Projekt.Controllers
             _signInManager = signInManager;
             _UserManager = usermanager;
             _Noveny = noveny;
-            Osszesitett.betegseg = _Noveny.Betegseg.ToList();
-            Osszesitett.elofordulas = _Noveny.Elofordulas.ToList();
-            Osszesitett.gyujtott = _Noveny.Gyujtott.ToList();
             osszesitett =
                 from felhasznalas in _Noveny.Felhasznalas
                 join elofordulas in _Noveny.Elofordulas on felhasznalas.Elo_Id equals elofordulas.ID

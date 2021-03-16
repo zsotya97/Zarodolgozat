@@ -128,7 +128,15 @@ namespace Projekt.Controllers
         }
         public IActionResult Leiras()
         {
+            
             return View(osszesitett.ToList());
+        }
+        [HttpPost,ActionName("LeirasKeres")]
+        public IActionResult LeirasKeres(string Betegseg)
+        {
+
+            var list = osszesitett.Where(x => x.Tipus == Betegseg).ToList();
+            return View("Leiras",list);
         }
         public IActionResult Ismerteto()
         {
@@ -138,6 +146,12 @@ namespace Projekt.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Single(int id)
+        {
+            return View(osszesitett.First(x=>x.ID==id));
+        }
+        
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
