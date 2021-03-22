@@ -8,7 +8,7 @@
         <a asp-action="index">Főoldal</a>
         <a asp-action="Tortenet">Történet</a>
         <a asp-action="Feldolgozas">Feldolgozás</a>
-        <a class="active" asp-action="Leiras">Leiras</a>
+        <a class="active" asp-action="Leiras">Leírás</a>
         <a asp-action="Ismerteto">Ismertető</a>
         <partial name="~/Views/Home/UserCheck.cshtml" />
     </div>
@@ -100,8 +100,8 @@
                     </div>
                 </div>
             </div>
-                            @foreach (var item in Model.Skip(1))
-                            {
+     @foreach (var item in Model.Skip(1))
+      {
             <div class="part-2" data-aos="fade-up" data-aos-delay="400">
                 <div class="row">
                     <div class="col-md-12 heading">
@@ -118,7 +118,8 @@
                         <p>@item.Leiras</p>
                     </div>
                 </div>
-            </div>          }
+            </div>
+         }
         }
         else
             {
