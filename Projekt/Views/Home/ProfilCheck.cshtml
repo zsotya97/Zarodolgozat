@@ -3,6 +3,10 @@
 @inject SignInManager<ProjektUser> SignInManager
 @inject UserManager<ProjektUser> UserManager
 
+@*
+    Ez azt figyeli, hogy ha a felhasználó bejelentkezett e:
+    ez esetben a navigációs sáv a profil füllel bővül a lábjegyzetben
+*@
 @if (SignInManager.IsSignedIn(User))
 {
 

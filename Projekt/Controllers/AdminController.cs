@@ -15,16 +15,19 @@ namespace Projekt.Controllers
 {
     public class AdminController : Controller
     {
-        
+        /// <summary>
+        /// Adatbázis változók
+        /// </summary>
         private readonly Projekt.Data.ProjektContext _context;
         private readonly SignInManager<ProjektUser> _signInManager;
         private readonly UserManager<ProjektUser> _UserManager;
         private static  ProjektUser profil;
         private readonly NovenyContext _Noveny;
 
-        [BindProperty]
+        [BindProperty] //Ez hozzáfűzia weboldalhoz: bizrtonságosabb
         private  IEnumerable<Osszesitett> osszesitett { get; set; }
 
+        //Ha nem admin az illető, erre az oldalra irányítja át
         public IActionResult Control()
         {
             return View();
@@ -36,6 +39,7 @@ namespace Projekt.Controllers
             _signInManager = signInManager;
             _UserManager = usermanager;
             _Noveny = noveny;
+            ///Az összes adat összekapcsolása LINQ segítségével
             osszesitett =
                 from felhasznalas in _Noveny.Felhasznalas
                 join elofordulas in _Noveny.Elofordulas on felhasznalas.Elo_Id equals elofordulas.ID
@@ -52,9 +56,6 @@ namespace Projekt.Controllers
                     Tipus = betegseg.Tipus,
                     Kep=novenyek.Kep,
                     Leiras=novenyek.Informacio
-                  
-
-
                 };
 
 
@@ -65,7 +66,7 @@ namespace Projekt.Controllers
       
         
 
-        // GET: profil
+        // Kilistázza a felhazsnálókat az adminfelületen
         public async Task<IActionResult> Index()
         {
             
@@ -83,7 +84,7 @@ namespace Projekt.Controllers
 
         }
 
-        // GET: profil/Details/5
+        // Keresés mezőkben amikre rákeresünk azokat listázza ki
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -104,7 +105,7 @@ namespace Projekt.Controllers
 
 
 
-        // GET: profil/Edit/5
+        // Ezzl módosíthatjuk a felhazsnáló adatait
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
@@ -156,7 +157,7 @@ namespace Projekt.Controllers
             return View(profil);
         }
 
-        // GET: profil/Delete/5
+        // Profil törlése
         
         public async Task<IActionResult> Delete(string id)
         {
@@ -175,7 +176,8 @@ namespace Projekt.Controllers
             return View(profil);
         }
 
-        // POST: profil/Delete/5
+        // Ha megerősítetük a törlést a profilnál
+        //Ez kitörli
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
@@ -186,7 +188,11 @@ namespace Projekt.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        /// <summary>
+        /// Ez kitörli azokat a fájlokat, amik már nem szükségesek
+        /// ezáltal helyet spórolunk
+        /// </summary>
+        /// <returns></returns>
         [HttpPost, ActionName("Torles")]
         [ValidateAntiForgeryToken]
         public IActionResult Fajlok()
@@ -201,7 +207,11 @@ namespace Projekt.Controllers
         }
 
 
-
+        /// <summary>
+        /// Kitöröljük a növényt id alapján
+        /// </summary>
+        /// <param name="id">Növény ID-je</param>
+        /// <returns>Visszatér a növény adminfelületére</returns>
         [HttpPost, ActionName("DeleteNoveny")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Noveny(int id)
@@ -213,7 +223,11 @@ namespace Projekt.Controllers
             await _Noveny.SaveChangesAsync();
             return RedirectToAction(nameof(Search));
         }
-
+        /// <summary>
+        /// ID alapján keressük a profilt
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Ha létezik, akkor igazat ad vissza, ha nem, akkor hamisat</returns>
         private bool profilExists(string id)
         {
             return _context.Users.Any(e => e.Id == id);
@@ -221,7 +235,11 @@ namespace Projekt.Controllers
 
 
 
-
+        /// <summary>
+        /// Beírjuk a keresőbe, amit szeretnénk, ez visszadja a magyar nevét, ha létezik
+        /// </summary>
+        /// <param name="magyar">Beírt adat, POST metódussal visszaadatjuk</param>
+        /// <returns></returns>
         [HttpPost, ActionName("Magyar")]
         public IActionResult ListMagyar(string magyar)
         {
@@ -232,7 +250,11 @@ namespace Projekt.Controllers
 
 
         }
-
+        /// <summary>
+        /// Beírjuk a keresőbe, amit szeretnénk, ez visszadja a latin nevét, ha létezik
+        /// </summary>
+        /// <param name="latin">Beírt adat, POST metódussal visszaadatjuk</param>
+        /// <returns></returns>
         [HttpPost, ActionName("Latin")]
         public IActionResult ListLatin(string latin )
         {
@@ -244,7 +266,13 @@ namespace Projekt.Controllers
 
 
         }
-
+        /// <summary>
+        /// Ellenőrizzük, hogy admin lépett e be, ha nem
+        /// akkor viszadob a Control oldalra, de viszont ha
+        /// igen, akkor az összes növényt kilistázva átdob minket a
+        /// Search oldalra
+        /// </summary>
+        /// <returns>Visszaad egy html oldalt View formájában</returns>
         public async Task<IActionResult> Search()
         {
             profil = await _UserManager.GetUserAsync(User);

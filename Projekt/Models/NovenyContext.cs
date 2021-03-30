@@ -8,6 +8,10 @@ namespace Projekt.Models
 {
     public class NovenyContext: DbContext
     {
+        /// <summary>
+        /// Adatbázis létrehozása migrációal
+        /// </summary>
+        /// <param name="options">növények adatbázisa Entity framewrok segítségével</param>
         public NovenyContext(DbContextOptions<NovenyContext> options) : base(options)
         {
 
@@ -18,7 +22,10 @@ namespace Projekt.Models
         public DbSet<Betegseg> Betegseg { get; set; }
         public DbSet<Gyujtott> Gyujtott { get; set; }
         
-
+        /// <summary>
+        /// Ez hozza létre az adatokat, seedként
+        /// </summary>
+        /// <param name="builder"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Betegseg();

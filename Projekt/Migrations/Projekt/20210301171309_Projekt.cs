@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-
+/// <summary>
+/// Migráció, generált adatok
+/// </summary>
 namespace Projekt.Migrations.Projekt
 {
     public partial class Projekt : Migration

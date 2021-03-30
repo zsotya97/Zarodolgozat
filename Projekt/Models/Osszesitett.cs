@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Projekt.Models
 {
-    
+    /// <summary>
+    /// Összekötés céljából fontos
+    /// </summary>
     sealed public class Osszesitett
     {
         [BindProperty]

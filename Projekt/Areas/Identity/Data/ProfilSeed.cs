@@ -8,6 +8,7 @@ namespace Projekt.Areas.Identity.Data
 {
     public static class ProfilSeed
     {
+        //Ez törli fel az admin adaitait migráció során az adatbázásiba
         public static void Admin(this ModelBuilder builder)
         {
             builder.Entity<ProjektUser>().HasData(

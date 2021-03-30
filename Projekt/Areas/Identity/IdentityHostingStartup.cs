@@ -15,10 +15,13 @@ namespace Projekt.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
+            ///SQlite ot használ a program
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<ProjektContext>(options =>
                     options.UseSqlite(
                         context.Configuration.GetConnectionString("ProjektContextConnection")));
+                //Ha véletlen áttérne a program MYSQL re:
+
                 /*services.AddDbContext<ProjektContext>(options => options.UseMySql(
                         "server=localhost;user=root;password=;database=novenyekproba",
                         new MySqlServerVersion(new Version(8, 0, 21))));*/

@@ -6,13 +6,13 @@
 @{
     var profil = await UserManager.GetUserAsync(User);
 }
-
+@*Üdvözlő szöveg: bejelentkezés ellenőrzése*@
 @if (SignInManager.IsSignedIn(User))
 {
 
 
 
-    <p >Szia <a style="font-weight:600;text-transform:uppercase;" asp-area="Identity" asp-page="/Account/Manage/Index" class="text-white" title="Profil megjelenítése">  <br />@profil.Keresztnév!</a> </p>
+    <p>Szia <a style="font-weight:600;text-transform:uppercase;" asp-area="Identity" asp-page="/Account/Manage/Index" class="text-white" title="Profil megjelenítése">  <br />@profil.Keresztnév!</a> </p>
 
     @*<form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Account/Login", new { area = "Identity" })">
             <button id="logout" type="submit" class=" btn btn-link">Kilépés</button>

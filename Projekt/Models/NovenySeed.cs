@@ -2,6 +2,9 @@
 
 namespace Projekt.Models
 {
+    //Adatbázis adatok: ha eltűnne az adatbázis, migráció segítségével
+    //a fontos adatokat visszahozhatjuk. Ezt nem hazsnálja a program, csak a 
+    //migráció során
     public static class NovenySeed
     {
         public static void Betegseg(this ModelBuilder builder)

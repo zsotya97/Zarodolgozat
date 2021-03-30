@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Projekt.Models
 {
+    //betegseg tábla adatai
     public class Betegseg
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //Betegseg tábla azonosítója: ez a kulcs
         public int ID { get; set; }
+        ///EZ a típusa a betegségnek
         public string Tipus { get; set; }
     }
 }

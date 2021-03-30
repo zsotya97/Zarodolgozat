@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Projekt.Areas.Identity.Data
 {
-    // Add profile data for application users by adding properties to the ProjektUser class
+    // Identity bővült kettő adattal
     public class ProjektUser : IdentityUser
     {
         [PersonalData]

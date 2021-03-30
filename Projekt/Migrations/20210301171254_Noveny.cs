@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+/// <summary>
+/// Migráció, generált adatok
+/// </summary>
 namespace Projekt.Migrations
 {
     public partial class Noveny : Migration

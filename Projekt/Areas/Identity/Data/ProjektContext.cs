@@ -15,7 +15,11 @@ namespace Projekt.Data
             : base(options)
         {
         }
-
+        /// <summary>
+        /// Adatbázist épít, és az admin methódust fogja előhívni, 
+        /// ami az összes adatát feltölti aza datbázisba
+        /// </summary>
+        /// <param name="builder">Alapértelmezett methódusadat DB céljából</param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

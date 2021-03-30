@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Projekt.Models
 {
+    //gyujtott tabla adatai
     public class Gyujtott
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        //gyujtott tábla azonosítója: ez a kulcs
         public int ID { get; set; }
+        //Kigyűjtött része
         public string Resz { get; set; }
     }
 }

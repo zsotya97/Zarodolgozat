@@ -1,11 +1,11 @@
 ﻿@model Osszesitett
 @{ ViewData["Title"] = Model.Magyar; }
-<!-- Header section Start-->
+<!-- ez az oldal írja le a rákattintott növény adatai-->
 <style>
-    #vissza{
-        font-size:30px !important;
-        text-align:center !important;
-        margin:30px !important;
+    #vissza {
+        font-size: 30px !important;
+        text-align: center !important;
+        margin: 30px !important;
     }
 </style>
 <header class="top">
@@ -21,9 +21,7 @@
     </div>
 
     <nav id="navbar">
-        <!-- container Start-->
         <div class="container">
-            <!--Row Start-->
             <div class="row">
                 <div class="col-lg-5 col-md-5 align-self-center left-side">
                     <partial name="~/Views/Shared/_WelcomePartial.cshtml" />
@@ -33,7 +31,6 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-7 align-self-center right-side">
                     <div class="social-icons square">
-                        <!-- Page Content -->
                         <div id="page-content-wrapper">
                             <span class="slide-menu" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>
                         </div>
@@ -46,18 +43,10 @@
                     </div>
                 </div>
             </div>
-            <!--Row Ended-->
         </div>
-        <!-- container Ended-->
     </nav>
     <img class="border-img" src="~/template/images/border.png" width="100%" alt="">
 </header>
-<!-- Header section Ended-->
-
-<section class="banner-another ">
-    <!-- Banner section Start-->
-</section>
-<!-- services section Start -->
 <section id="products">
     <div class="container">
 
@@ -93,7 +82,6 @@
         </div>
     </div>
 </section>
-<!-- services section Ended -->
 
 <footer class="contact">
     <div class="gradient"></div>
@@ -131,7 +119,4 @@
         </div>
     </div>
 </footer>
-<!-- Return to Top -->
-
-<script></script>
 
