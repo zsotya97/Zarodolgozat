@@ -1,4 +1,4 @@
 @echo off
 dotnet build	
-dotnet run
+dotnet watch run
 

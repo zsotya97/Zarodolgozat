@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Osszesitett>
 @{ ViewData["Title"] = "Leírás"; }
-<!-- Leírás oldal -->
+<!-- Leírás oldala -->
 <header class="top">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -41,57 +41,56 @@
     <img class="border-img" src="~/template/images/border.png" width="100%" alt="">
 </header>
 
+<section class="banner-another ">
+</section>
 <section id="products">
     <div class="container">
         @if (Model != null)
         {
-            <h2 data-aos="fade-up" data-aos-delay="200">Leírás</h2>
-            <div class="part-1" data-aos="fade-up" data-aos-delay="400">
-                <div class="row">
-                    <div class="col-md-12 col-12 heading">
-                        <h5 class="mr-1">Keresés betegség szerint</h5>
+<h2 data-aos="fade-up" data-aos-delay="200">Leírás</h2>
+                <div class="part-1" data-aos="fade-up" data-aos-delay="400">
+                    <div class="row">
+                        <div class="col-md-12 col-12 heading">
+                            <h5 class="mr-1">Keresés betegség szerint</h5>
 
-                        <form asp-action="LeirasKeres" method="post">
-                            <div class="form-group">
-                                <select class="custom-select mr-sm-2 form-control" name="Betegseg">
-                                    <option selected value="@Osszesitett.betegseg.First().Tipus">@Osszesitett.betegseg.First().Tipus</option>
-                                    @foreach (var item in Osszesitett.betegseg.Skip(1))
-                                    {
+                            <form asp-action="LeirasKeres" method="post">
+                                <div class="form-group">
+                                    <select class="custom-select mr-sm-2 form-control" name="Betegseg">
+                                        <option selected value="@Osszesitett.betegseg.First().Tipus">@Osszesitett.betegseg.First().Tipus</option>
+                                        @foreach (var item in Osszesitett.betegseg.Skip(1))
+                                        {
 
-                                        <option value="@item.Tipus">@item.Tipus</option>
+                        <option value="@item.Tipus">@item.Tipus</option>}
 
+                                    </select>
+                                </div>
 
-                                    }
-
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="submit" class="btn text-white" style="background-color:forestgreen" value="Keresés">
-                            </div>
-                        </form>
+                                <div class="form-group">
+                                    <input type="submit" class="btn text-white" style="background-color:forestgreen" value="Keresés">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12 heading">
+                            <h3><i class="fa fa-envira" aria-hidden="true"></i> <a asp-route-id="@Model.First().ID" id="@Model.First().ID" asp-action="Single">@($"{Model.First().Magyar}")</a></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-12">
+                            <figure>
+                                <img src="~/images/Novenyek/@Model.First().Kep" alt="@Model.First().Magyar" title="@Model.First().Magyar" width="100%">
+                            </figure>
+                        </div>
+                        <div class="col-lg-9 col-md-8 col-12 col1">
+                            <p>
+                                @Model.First().Leiras
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 col-12 heading">
-                        <h3><i class="fa fa-envira" aria-hidden="true"></i> <a asp-route-id="@Model.First().ID" id="@Model.First().ID" asp-action="Single">@($"{Model.First().Magyar}")</a></h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-12">
-                        <figure>
-                            <img src="~/images/Novenyek/@Model.First().Kep" alt="@Model.First().Magyar" title="@Model.First().Magyar" width="100%">
-                        </figure>
-                    </div>
-                    <div class="col-lg-9 col-md-8 col-12 col1">
-                        <p>
-                            @Model.First().Leiras
-                        </p>
-                    </div>
-                </div>
-            </div>
-            @foreach (var item in Model.Skip(1))
-            {
+                                @foreach (var item in Model.Skip(1))
+                                {
                 <div class="part-2" data-aos="fade-up" data-aos-delay="400">
                     <div class="row">
                         <div class="col-md-12 heading">
@@ -108,13 +107,10 @@
                             <p>@item.Leiras</p>
                         </div>
                     </div>
-                </div>
-            }
-        }
-        else
-        {
-            <h3>Nincs az adatbázisban megfelelő növény</h3>
-        }
+                </div>} }
+                                            else
+                                            {
+                                <h3>Nincs az adatbázisban megfelelő növény</h3>            }
     </div>
 </section>
 
@@ -156,4 +152,5 @@
 
 </footer>
 
+<script></script>
 
